@@ -11,7 +11,7 @@ $menus = [
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Chef server</a>
+        <a class="navbar-brand" href="#">Vagrant Chef Generator</a>
     </div>
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
