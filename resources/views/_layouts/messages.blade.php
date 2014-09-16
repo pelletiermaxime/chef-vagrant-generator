@@ -1,10 +1,9 @@
-@if (Session::has('error'))
-    <ul class="alert alert-danger">
-        @foreach (Session::get('error')->all() as $message)
-            <li>{{$message}}</li>
-        @endforeach
-    </ul>
-@elseif (Session::has('success'))
+@if (count($errors))
+    @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">{{ $error }}</div>
+    @endforeach
+@endif
+@if (Session::has('success'))
     <div class="alert alert-success">
         {{ Session::get('success') }}
     </div>

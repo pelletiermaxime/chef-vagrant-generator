@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Illuminate\Html;
+use App\Http\Requests\GenerateRequest;
 
 class GeneratorController extends Controller
 {
@@ -10,9 +10,9 @@ class GeneratorController extends Controller
         return view('generator/index');
     }
 
-    public function create()
+    public function create(GenerateRequest $request)
     {
-        $input = Input::all();
+        $input = $request->all();
         return view('chef/Vagrantfile')
             ->withVmName($input['vmName'])
             ->withMemory($input['memory'])
