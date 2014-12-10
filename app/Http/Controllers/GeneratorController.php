@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller;
-use App\Http\Requests\GenerateRequest;
+// use Illuminate\Routing\Controller;
+// use App\Http\Requests\GenerateRequest;
 
 class GeneratorController extends Controller
 {
