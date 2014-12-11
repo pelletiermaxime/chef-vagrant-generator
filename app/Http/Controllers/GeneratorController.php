@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 // use Illuminate\Routing\Controller;
-// use App\Http\Requests\GenerateRequest;
+use Illuminate\Http\Request;
 
 class GeneratorController extends Controller
 {
@@ -10,7 +10,7 @@ class GeneratorController extends Controller
         return view('generator/index');
     }
 
-    public function create(GenerateRequest $request)
+    public function create(Request $request)
     {
         $input = $request->all();
         return view('chef/Vagrantfile')
