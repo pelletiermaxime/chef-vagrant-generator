@@ -26,8 +26,8 @@ class AppServiceProvider extends ServiceProvider {
 		// "Registrar" implementation here. You can add your own bindings too!
 
 		$this->app->bind(
-			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
+            'Illuminate\Contracts\Auth\Registrar',
+            'App\Services\Registrar'
 		);
 	}
 

@@ -2,21 +2,23 @@
 
 // use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use App\Http\Models;
+use App\Http\Requests\GeneratorRequest;
 
 class GeneratorController extends Controller
 {
     public function index()
     {
-        return view('generator/index');
+        return view('generator/index')
+            ->withGeneral(new Models\General)
+        ;
     }
 
-    public function create(Request $request)
+    public function store(GeneratorRequest $request)
     {
         $input = $request->all();
         return view('chef/Vagrantfile')
-            ->withVmName($input['vmName'])
-            ->withMemory($input['memory'])
-            ->withIpAddress($input['ipAddress'])
+            ->withInput($input)
         ;
     }
 }

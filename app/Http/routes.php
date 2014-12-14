@@ -20,8 +20,8 @@ Route::get('/', [
     'uses' => 'GeneratorController@index',
 ]);
 Route::post('/', [
-    'as'   => 'generator.create',
-    'uses' => 'GeneratorController@create',
+    'as'   => 'generator.store',
+    'uses' => 'GeneratorController@store',
 ]);
 
 /*
