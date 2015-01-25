@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => null,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -45,13 +45,6 @@ return [
 	*/
 
 	'connections' => [
-
-		'sqlite' => [
-			'driver'   => 'sqlite',
-			'database' => storage_path().'/database.sqlite',
-			'prefix'   => '',
-		],
-
 		'mysql' => [
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
@@ -73,16 +66,6 @@ return [
 			'prefix'   => '',
 			'schema'   => 'public',
 		],
-
-		'sqlsrv' => [
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'prefix'   => '',
-		],
-
 	],
 
 	/*
