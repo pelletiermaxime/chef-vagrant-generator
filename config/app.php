@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => (bool) getenv('APP_DEBUG') ?: false,
+    'debug' => env('APP_DEBUG'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => 'YourSecretKey!!!',
+    'key' => env('APP_KEY', 'SomeRandomString'),
 
     'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -114,6 +114,8 @@ return [
          * Application Service Providers...
          */
         'App\Providers\AppServiceProvider',
+        'App\Providers\BusServiceProvider',
+        'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
 
@@ -122,6 +124,7 @@ return [
          */
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
+        'Illuminate\Bus\BusServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
         'Illuminate\Routing\ControllerServiceProvider',
@@ -133,6 +136,7 @@ return [
         'Illuminate\Hashing\HashServiceProvider',
         'Illuminate\Mail\MailServiceProvider',
         'Illuminate\Pagination\PaginationServiceProvider',
+        'Illuminate\Pipeline\PipelineServiceProvider',
         'Illuminate\Queue\QueueServiceProvider',
         'Illuminate\Redis\RedisServiceProvider',
         'Illuminate\Auth\Passwords\PasswordResetServiceProvider',
@@ -143,19 +147,6 @@ return [
 
         'Illuminate\Html\HtmlServiceProvider',
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Service Provider Manifest
-    |--------------------------------------------------------------------------
-    |
-    | The service provider manifest is used by Laravel to lazy load service
-    | providers which are not needed for each request, as well to keep a
-    | list of all of the services. Here, you may set its storage spot.
-    |
-    */
-
-    'manifest' => storage_path().'/framework',
 
     /*
     |--------------------------------------------------------------------------
@@ -174,6 +165,7 @@ return [
         'Artisan'   => 'Illuminate\Support\Facades\Artisan',
         'Auth'      => 'Illuminate\Support\Facades\Auth',
         'Blade'     => 'Illuminate\Support\Facades\Blade',
+        'Bus'       => 'Illuminate\Support\Facades\Bus',
         'Cache'     => 'Illuminate\Support\Facades\Cache',
         'Config'    => 'Illuminate\Support\Facades\Config',
         'Cookie'    => 'Illuminate\Support\Facades\Cookie',
@@ -187,7 +179,6 @@ return [
         'Lang'      => 'Illuminate\Support\Facades\Lang',
         'Log'       => 'Illuminate\Support\Facades\Log',
         'Mail'      => 'Illuminate\Support\Facades\Mail',
-        'Paginator' => 'Illuminate\Support\Facades\Paginator',
         'Password'  => 'Illuminate\Support\Facades\Password',
         'Queue'     => 'Illuminate\Support\Facades\Queue',
         'Redirect'  => 'Illuminate\Support\Facades\Redirect',
