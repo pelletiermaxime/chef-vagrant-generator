@@ -146,6 +146,7 @@ return [
         'Illuminate\View\ViewServiceProvider',
 
         'Illuminate\Html\HtmlServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
     ],
 
     /*
@@ -194,6 +195,7 @@ return [
 
         'Form'      => 'Illuminate\Html\FormFacade',
         'HTML'      => 'Illuminate\Html\HtmlFacade',
+        'Debugbar'  => 'Barryvdh\Debugbar\Facade',
     ],
 
 ];
